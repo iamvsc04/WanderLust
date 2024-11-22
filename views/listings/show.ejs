@@ -11,7 +11,6 @@
         margin: 0;
         padding: 0;
       }
-
       .container {
         width: 60%;
         margin: 35px auto;
@@ -54,7 +53,7 @@
         font-size: 24px;
         font-weight: bold;
         color: #28a745;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
 
       .book-button {
@@ -67,7 +66,6 @@
         font-size: 18px;
         text-align: center;
       }
-
       .book-button:hover {
         background-color: #0056b3;
       }
@@ -75,12 +73,9 @@
   </head>
   <body>
     <div class="container">
-      <!-- Image Section -->
       <div class="image-container">
         <img src="<%= listing.image %>" alt="<%= listing.title %>" />
       </div>
-
-      <!-- Content Section -->
       <div class="content">
         <h1 class="title"><%= listing.title %></h1>
         <p class="location">
@@ -88,7 +83,9 @@
           listing.country %>
         </p>
         <p class="description"><%= listing.description %></p>
-        <p class="price">&#8377;<%= listing.price %> per night</p>
+        <p class="price">
+          &#8377;<%= listing.price.toLocaleString("en-IN") %> per night
+        </p>
         <a href="#" class="book-button">Book Now</a>
       </div>
     </div>
