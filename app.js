@@ -36,6 +36,14 @@ app.get("/listings", async (req, res) => {
   const allListings = await Listing.find({});
   res.render("listings/index.ejs", { allListings });
 });
+app.get("/listings/new", (req, res) => {
+  res.render("listings/create.ejs");
+});
+
+app.post("/listings", async (req, res) => {
+  let listing = req.body;
+  console.log(listing);
+});
 
 app.get("/listings/new", async (req, res) => {
   res.render("listings/new.ejs");
